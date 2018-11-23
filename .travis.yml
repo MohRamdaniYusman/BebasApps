@@ -1,32 +1,27 @@
 sudo: required 
 dist: trusty 
-language:php
+language: php
 
 #versi php 
-	-7 .1
+	- 7.1
 
 #branch yang digunakan 
 branches: 
 	only:
-	-master
-	-develop
+	- master
+	- develop
 
-#install environment di OS
-before install:
-	-curl -LO http://storage.googleapis.com/kubernets-release/release/$(curl -s https://storage.googleapis.com/kubernets-release/release/stable.txt/bin/linux/amd64/kubect1 
 
-	-chmod +x ./kubect1
-	-sudo mv./kubect1/usr/local/bin/kubect1
 
 #precompile
 before_script:
-  -cp .env.travis .env
-  -composer install --no-interaction
-  -php artisan key:generate
+  - cp .env.travis .env
+  - composer install --no-interaction
+  - php artisan key:generate
 
 
 #main Execution (Build)
 script:
-  -./vendor/phpunit 
+  - ./vendor/phpunit 
 
 after_success:
