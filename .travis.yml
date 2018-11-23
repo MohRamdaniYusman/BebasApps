@@ -3,6 +3,7 @@ dist: trusty
 language: php
 
 #versi php 
+php:
 	- 7.1
 
 #branch yang digunakan 
@@ -10,8 +11,6 @@ branches:
 	only:
 	- master
 	- develop
-
-
 
 #precompile
 before_script:
